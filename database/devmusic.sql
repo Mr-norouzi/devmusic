@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2025 at 05:16 PM
+-- Generation Time: Dec 30, 2025 at 03:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -51,6 +51,13 @@ CREATE TABLE `artists` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `artists`
+--
+
+INSERT INTO `artists` (`id`, `name`, `description`, `img`, `created_at`, `updated_at`) VALUES
+(1, 'test', 'test', '1766250225_image.jpg', '2025-12-20 17:03:45', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +71,14 @@ CREATE TABLE `category` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `title`, `img`, `created_at`, `updated_at`) VALUES
+(1, 'تست ', '.', '2025-12-28 15:33:06', NULL),
+(2, 'test', '.', '2025-12-29 13:39:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,8 +96,16 @@ CREATE TABLE `music` (
   `artist_id` tinyint(4) NOT NULL,
   `cat_id` tinyint(4) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `music`
+--
+
+INSERT INTO `music` (`id`, `name`, `file`, `description`, `lyrics`, `cover`, `artist_id`, `cat_id`, `created_at`, `updated_at`) VALUES
+(1, 'music1', '', 'music', '', 'music_image (7).jpg', 0, 1, '2025-12-25 23:54:22', '0000-00-00 00:00:00'),
+(2, 'سیبلاتنمک', 'parsalip_yadam_miad_320.mp3', 'شسیباتنمک', '', 'image (7).jpg', 0, 2, '2025-12-29 15:14:21', '2025-12-29 15:14:21');
 
 -- --------------------------------------------------------
 
@@ -240,19 +263,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `music`
 --
 ALTER TABLE `music`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `playlist`
