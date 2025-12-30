@@ -97,10 +97,10 @@ $musics = $conn->query("SELECT * FROM `music` WHERE id= '$id'")->fetch();
             <textarea name="lyrics" required><?= $musics['lyrics'] ?></textarea>
 
             <label>فایل موسیقی </label>
-            <input type="file" name="file" accept="audio/*" value="<?= $musics['file'] ?>">
+            <input type="file" name="file" accept="audio/*">
 
             <label>تصویر کاور</label>
-            <input type="file" name="cover" accept="img/*" value="<?= $musics['cover'] ?>">
+            <input type="file" name="cover" accept="img/*">
 
             <button type="submit">ذخیره</button>
 

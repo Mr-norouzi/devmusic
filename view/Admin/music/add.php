@@ -86,13 +86,13 @@ require_once "../../../functions/helpers.php";
             <input type="text" name="description" required>
 
              <label>متن موسیقی </label>
-            <input type="text" name="lirycs" required>
+            <input type="text" name="lyrics" required>
 
             <label>تصویر کاور</label>
             <input type="file" name="cover" accept="image/*">
 
             <label>فایل موسیقی</label>
-            <input type="file" name="music file" accept="audio/*">
+            <input type="file" name="file"> <!--  accept="audio/*" -->
 
             <button type="submit">ذخیره</button>
         </form>
